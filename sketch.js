@@ -19,7 +19,6 @@ let carrier;
 let mod;
 
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
@@ -64,11 +63,11 @@ function draw() {
   let w = capture.width;
   let h = int(capture.height); 
   fast = 0.25;
-  // tint
-  let shade = map(variable, 60, 180, 0, 360);
-  fill(shade, 100, 50, 0.5);
-  rectMode(CENTER);
-  rect(width/2, height/2, width, height); 
+   // tint
+   let shade = map(variable, 60, 180, 0, 360);
+   fill(shade, 100, 50, 0.5);
+   rectMode(CENTER);
+   rect(width/2, height/2, width, height); 
 
    //sound 
    let modFreq = map(variable, 60, 180, 0, 200)
@@ -97,6 +96,7 @@ function draw() {
   // if (frameCount%int(random(500,1000))==0){
   //   bFlip = !bFlip;
   // }
+  
 
 }
 
