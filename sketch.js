@@ -68,7 +68,7 @@ function draw() {
 
   let w = capture.width;
   let h = int(capture.height); 
-  fast = 0.25;
+  fast = 0.5;
    // tint
    noStroke();
    let shade = map(variable, 60, 180, 0, 360);
@@ -89,7 +89,7 @@ function draw() {
   
   //slitscan cam
   if(!bFlip) {
-    copy(capture, w/2, 0, 1, h, x, 0, 1, h);
+    copy(capture, w/2, 0, 50, h, x, 0, 50, h);
   } else {
     copy(capture, 0,w/2, h, 1, 0, x, h, 1);
   }
