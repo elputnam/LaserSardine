@@ -19,6 +19,12 @@ let carrier;
 let mod;
 
 
+// noise wave
+let xoff1 = 0;
+let xoff2 = 10000;
+let inc = 0.003;
+let start = 0;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
@@ -64,10 +70,11 @@ function draw() {
   let h = int(capture.height); 
   fast = 0.25;
    // tint
+   noStroke();
    let shade = map(variable, 60, 180, 0, 360);
    fill(shade, 100, 50, 0.5);
-   rectMode(CENTER);
-   rect(width/2, height/2, width, height); 
+  //  rectMode(CENTER);
+   rect(0, 0, width, height); 
 
    //sound 
    let modFreq = map(variable, 60, 180, 0, 200)
@@ -97,6 +104,29 @@ function draw() {
   //   bFlip = !bFlip;
   // }
   
+  //noise wave
+  let xoff = start;
+  beginShape();
+  
+  for (let x = 0; x < width; x++){
+    
+    //fill(0);
+    // var y = noise(xoff) * height;
+    var y = map(variable, 60, 180, height, 0);
+    let lineHue = map(variable, 60, 180, 360, 0);
+    //noStroke();
+    strokeWeight(5);
+    // stroke(0);
+    // stroke(0, 100, 50, 10);
+    stroke(lineHue, 100, 50);
+    // fill(lineHue, 100, 50);
+    vertex(x, y);
+    xoff += inc;
+  }
+
+  endShape();
+  start += inc;
+
 
 }
 
