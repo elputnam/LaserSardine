@@ -83,10 +83,10 @@ function draw() {
    mod.amp(modAmp, 0.1);
 
   //text
-  fill(0)
-  stroke(255);
-  textSize(100);
-  text(variable, 0, 100);
+  // fill(0)
+  // stroke(255);
+  // textSize(100);
+  // text(variable, 0, 100);
   
   //slitscan cam
   if(!bFlip) {
