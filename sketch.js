@@ -68,7 +68,7 @@ function draw() {
 
   let w = capture.width;
   let h = int(capture.height); 
-  fast = 0.5;
+  fast = 1;
    // tint
    noStroke();
    let shade = map(variable, 60, 180, 0, 360);
@@ -83,13 +83,14 @@ function draw() {
    mod.amp(modAmp, 0.1);
 
   //text
-  fill(255);
+  fill(0)
+  stroke(255);
   textSize(100);
   text(variable, 0, 100);
   
   //slitscan cam
   if(!bFlip) {
-    copy(capture, w/2, 0, 50, h, x, 0, 50, h);
+    copy(capture, w/2, 0, random(1, 20), h, x, 0, random(1, 20), h);
   } else {
     copy(capture, 0,w/2, h, 1, 0, x, h, 1);
   }
@@ -118,7 +119,7 @@ function draw() {
     strokeWeight(5);
     // stroke(0);
     // stroke(0, 100, 50, 10);
-    stroke(lineHue, 100, 50);
+    stroke(lineHue, 100, 100);
     // fill(lineHue, 100, 50);
     vertex(x, y);
     xoff += inc;
