@@ -1,3 +1,5 @@
+//HR and slitscan animation for GhostWork
+
 //slit scan cam
 let capture;
 let x = 0; 
