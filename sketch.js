@@ -202,4 +202,6 @@ function mouseClicked() {
   if (!serial.isOpen()) {
     serial.connectAndOpen(null, serialOptions);
   }
+  let fs = fullscreen();
+  fullscreen(!fs);
 }
