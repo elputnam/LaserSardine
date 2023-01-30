@@ -35,7 +35,7 @@ function setup() {
   //set up cam
   capture = createCapture(VIDEO);
   //capture.size(windowWidth,windowHeight);
-  capture.size(1920, 1080)
+  capture.size(1920, 1200)
   capture.hide();
 
   // Setup Web Serial using serial.js
@@ -73,22 +73,22 @@ function draw() {
   fast = 1;
    // tint
    noStroke();
-   let shade = map(variable, 60, 180, 0, 360);
+   let shade = map(variable, 80, 200, 0, 360);
    fill(shade, 100, 50, 0.5);
   //  rectMode(CENTER);
    rect(0, 0, width, height); 
 
    //sound 
-   let modFreq = map(variable, 60, 180, 0, 200)
-    let modAmp = map(variable, 60, 180, 0, 1)
-   mod.freq(modFreq);
-   mod.amp(modAmp, 0.1);
+   let modFreq = map(variable, 80, 200, 0, 200)
+    let modAmp = map(variable, 80, 200, 0, 1)
+  //  mod.freq(modFreq);
+  //  mod.amp(modAmp, 0.1);
 
   //text
-  // fill(0)
-  // stroke(255);
-  // textSize(100);
-  // text(variable, 0, 100);
+  fill(0)
+  stroke(255);
+  textSize(100);
+  text(variable, 50, 200);
   
   //slitscan cam
   if(!bFlip) {
@@ -115,8 +115,8 @@ function draw() {
     
     //fill(0);
     // var y = noise(xoff) * height;
-    var y = map(variable, 60, 180, height, 0);
-    let lineHue = map(variable, 60, 180, 360, 0);
+    var y = map(variable, 80, 200, height, 0);
+    let lineHue = map(variable, 80, 200, 360, 0);
     //noStroke();
     strokeWeight(5);
     // stroke(0);
